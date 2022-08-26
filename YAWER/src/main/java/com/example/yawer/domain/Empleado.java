@@ -5,6 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
+
 public class Empleado {
 
     public Empleado(String nombre_Empleado, String email, String empresa, String rol_Empleado) {
