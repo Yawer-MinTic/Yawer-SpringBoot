@@ -1,4 +1,4 @@
-package com.example.yawer.domain;
+package com.example.yawer.domain.Domain;
 
 
 import lombok.Getter;

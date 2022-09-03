@@ -1,4 +1,8 @@
-package com.example.yawer.domain;
+package com.example.yawer.domain.Domain;
+
+import com.example.yawer.domain.Domain.Empleado;
+import com.example.yawer.domain.Domain.Empresa;
+import com.example.yawer.domain.Domain.MovimientoDinero;
 
 public class Lanzadora {
 

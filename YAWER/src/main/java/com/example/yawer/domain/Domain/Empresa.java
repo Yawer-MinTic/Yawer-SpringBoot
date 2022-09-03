@@ -1,4 +1,4 @@
-package com.example.yawer.domain;
+package com.example.yawer.domain.Domain;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -20,4 +20,9 @@ public class Empresa{
     public String Nit;
 
 
+
+//CONSTRUCTOR VACIO PARA EL SERVICIO EMPRESA
+    public Empresa() {
+
+    }
 }
