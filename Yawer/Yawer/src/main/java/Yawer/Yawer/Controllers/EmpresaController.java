@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.List;
 
@@ -20,11 +22,20 @@ public class EmpresaController {
     @Autowired
     ServiceEmpresa serviceEmpresa;
 
+    @PostMapping (path = "/enterprises")
+    private RedirectView crearEmpresa (@ModelAttribute Empresa empresa, Model modelo){
+        modelo.addAttribute("Nempresa", new Empresa());
 
-    @PostMapping (path = "/enterprises", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-    private void crearEmpresa (@RequestBody Empresa empresa) {
-        serviceEmpresa.crearEmpresa(empresa);
+        //modelo.addAttribute(empresa);
+
+        serviceEmpresa.crearEmpresa(empresa).equals(Boolean.TRUE);
+            return new RedirectView("/crearEmpresa");
+
+
     }
+
+
+
 
 
     @GetMapping ("/enterprises")
@@ -53,5 +64,8 @@ public class EmpresaController {
      private void editarEmpresa (@RequestBody Empresa empresa){
         serviceEmpresa.editarEmpresa(empresa);
     }
+
+
+
 
 }

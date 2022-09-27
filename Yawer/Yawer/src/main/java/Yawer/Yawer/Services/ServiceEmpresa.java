@@ -1,6 +1,7 @@
 package Yawer.Yawer.Services;
 
 import Yawer.Yawer.Domains.Empresa;
+import Yawer.Yawer.Enums.Roles;
 import Yawer.Yawer.Repositories.EmpresaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,8 +26,9 @@ public class ServiceEmpresa {
 
     }
 
-    public void crearEmpresa (Empresa empresa) {
+    public Boolean crearEmpresa (Empresa empresa) {
         empresaRepository.save(empresa);
+        return Boolean.TRUE;
     }
 
 
@@ -54,4 +56,5 @@ public class ServiceEmpresa {
     }
 
 
-}
+
+    }

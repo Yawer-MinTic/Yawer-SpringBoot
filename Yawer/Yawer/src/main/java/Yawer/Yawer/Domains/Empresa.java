@@ -1,11 +1,13 @@
 package Yawer.Yawer.Domains;
 
+import Yawer.Yawer.Enums.Roles;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.Collection;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -27,6 +29,7 @@ public class Empresa {
     public String Nombre_Empresa;
     @Column (name = "Direccion")
     public String Direccion;
+
     @Column(name = "Telefono")
     public String Telefono;
     @Column(name = "NIT")
@@ -34,7 +37,7 @@ public class Empresa {
 
 
 
-   /* @OneToMany
+   /*@OneToMany
     @JoinColumn(name = "Usuario-ID")
     private List<Usuario> usuario;
 

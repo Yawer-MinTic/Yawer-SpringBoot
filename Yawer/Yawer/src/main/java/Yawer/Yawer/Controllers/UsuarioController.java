@@ -5,7 +5,9 @@ import Yawer.Yawer.Services.ServiceUsuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.List;
 
@@ -46,5 +48,25 @@ ServiceUsuario serviceUsuario;
     @DeleteMapping("/users/{id}")
     private void EliminarUsuario (@PathVariable("id") Long id) {
             serviceUsuario.eliminarrUsuario(id);
+    }
+
+ /*@PostMapping(path = "/usersRol", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public void insertarUsuarioRol (@RequestBody Usuario usuario ){
+
+        serviceUsuario.insertarUsuarioRol(usuario);
+
+    }*/
+
+
+    @PostMapping(path = "/usersRol")
+    public RedirectView insertarUsuarioRol (@ModelAttribute Usuario usuario, Model modelo ) {
+        modelo.addAttribute(usuario);
+
+        if (serviceUsuario.insertarUsuarioRol(usuario).equals(Boolean.TRUE)) {
+            return  new RedirectView("crearUsuario");
+
+        }else {
+            return new RedirectView();        }
+
     }
 }

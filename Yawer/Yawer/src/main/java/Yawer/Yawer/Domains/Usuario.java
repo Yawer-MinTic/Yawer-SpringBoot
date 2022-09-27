@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.Collection;
 
 
 @AllArgsConstructor
@@ -32,23 +33,16 @@ public class Usuario {
     @Column (name = "Empresa")
     public String Empresa;
 
-
+    @Column(name = "Rol")
     @Enumerated(EnumType.STRING)
-    @Column (name = "Roles")
-    public Roles rol;
+    private Roles rol;
+
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "id")
+    private Collection<entityPermisos> permisosCollection;
 
 
-  /* @ManyToOne
-    @JoinColumn(name = "Empresa", referencedColumnName = "id")
-    private Empresa empresa;
 
 
-   @OneToMany
-   @JoinColumn(name = "MovimientoDinero", referencedColumnName = "id")
-   private List<MovimientoDinero> movimientoDinero;
 
-  @OneToMany
-  @JoinColumn(name = "Roles", referencedColumnName = "id")
-  private Roles roles;*/
 
 }

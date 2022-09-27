@@ -1,5 +1,7 @@
 <!doctype html>
 <html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -10,6 +12,10 @@
     <link rel="icon" type="image/x-icon" href="logo.ico">
 
 </head>
+
+<header style="background-color:black">
+    <img class="d-block mx-auto mb-4  " src="logo.jpeg" alt="Personas" height="100" width=""></header>
+
 <body>
 
 <main>
@@ -17,13 +23,16 @@
 
         <h1>Nueva Empresa</h1>
 
-        <form>
-            <input class="" type="submit">
+        <form class="d-flex flex-column gap-3 align-items-center" action="@{/enterprises/crearEmpresa}" method="post" object="${Nempresa}">
+
+            <input field="*{Nombre_Empresa}" class="form-control" type="text" placeholder="NombreEmpresa"/>
+            <input field="*{Direccion}" class="form-control" type="text" placeholder="Direccion"/>
+            <input field="*{Telefono}" class="form-control" type="number" placeholder="Telefono"/>
+            <input field="*{Nit}" class="form-control" type="number" placeholder="Nit"/>
 
 
             <button class="btn btn-primary" type="submit"> Add Empresa </button>
         </form>
-
 
 
     </div>
