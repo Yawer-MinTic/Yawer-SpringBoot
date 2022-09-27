@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="icon" type="image/x-icon" href="logo.ico">
+
+</head>
+<header style="background-color:black">
+    <img class="d-block mx-auto mb-4  " src="logo.jpeg" alt="Personas" height="100" width=""></header>
+
+<body>
+
+<main>
+    <div class="d-flex flex-column align-items-center px-4 py-5 my-5 text-center">
+
+        <h1>Nuevo Usuario</h1>
+
+        <form class="d-flex flex-column gap-3 align-items-center" action="@{/usersRol}" method="post" object="${Nusuario}">
+
+            <input field="*{Nombre_Empleado}" class="form-control" type="text" placeholder="Nombre_Empleado"/>
+            <input field="*{Email}" class="form-control" type="text" placeholder="Email"/>
+            <input field="*{Empresa}" class="form-control" type="text" placeholder="Empresa"/>
+            <input field="*{rol}" class="form-control" type="text" placeholder="rol361061"/>
+
+
+            <button class="btn btn-primary" type="submit"> Add Usuario </button>
+        </form>
+
+
+    </div>
+
+</main>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+</body>
+</html>
